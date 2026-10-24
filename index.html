@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phone App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="phone">
+    <div class="notch"><span class="speaker"></span><span class="camera"></span></div>
+
+    <div class="screen" id="screen">
+      <div class="status-time" id="statusTime">9:19</div>
+
+      <!-- LOCK SCREEN -->
+      <section class="page wallpaper active" id="lockScreen">
+        <p class="lock-date" id="lockDate">Fri Sept 19</p>
+        <p class="lock-time" id="lockTime">9:19</p>
+        <button class="unlock" id="unlockButton" aria-label="Unlock phone">Tap to unlock</button>
+      </section>
+
+      <!-- HOME SCREEN -->
+      <section class="page wallpaper" id="homeScreen">
+        <nav class="dock" aria-label="Apps">
+          <button class="app-icon" data-open="todolistScreen" aria-label="To-do list">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+              <circle cx="11" cy="14" r="2.5"/><circle cx="11" cy="24" r="2.5"/><circle cx="11" cy="34" r="2.5"/>
+              <path d="M18 14h20M18 24h20M18 34h20"/>
+            </svg>
+          </button>
+          <button class="app-icon" data-open="calculatorScreen" aria-label="Calculator">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2">
+              <rect x="12" y="6" width="24" height="36" rx="2"/>
+              <rect x="16" y="10" width="16" height="6"/>
+              <path d="M17 22h2M23 22h2M29 22h2M17 28h2M23 28h2M29 28h2M17 34h2M23 34h2M29 34h2" stroke-linecap="round" stroke-width="3"/>
+            </svg>
+          </button>
+        </nav>
+      </section>
+
+      <!-- CALCULATOR -->
+      <section class="page calc" id="calculatorScreen">
+        <output class="calc-display" id="calcDisplay">0</output>
+        <div class="keys">
+        <button class="key" data-key="%">%</button>
+        <button class="key" data-key="C">AC</button>
+        <button class="key" data-key="<">&#8592;</button>
+        <button class="key op" data-key="/">&divide;</button>
+
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+        <button class="key op" data-key="*">&times;</button>
+
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+        <button class="key op" data-key="-">-</button>
+
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+        <button class="key op" data-key="+">+</button>
+
+        <button class="key" data-key="neg">+/-</button>
+        <button class="key" data-key="0">0</button>
+        <button class="key" data-key=".">.</button>
+        <button class="key op" data-key="=">=</button>
+        </div>
+        <button class="home-bar" data-open="homeScreen" aria-label="Go home"></button>
+      </section>
+
+      <!-- TO DO LIST -->
+      <section class="page app" id="todolistScreen">
+        <h1>To do</h1>
+        <div class="todo-add">
+          <input id="taskInput" type="text" placeholder="Add a task" autocomplete="off">
+          <button id="addTask">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+        <button class="clear-link" id="clearTasks">Clear all</button>
+        <button class="home-bar" data-open="homeScreen" aria-label="Go home"></button>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
